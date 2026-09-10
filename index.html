@@ -25,9 +25,21 @@
     }
 
     header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
       margin-bottom: 2.5rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 1.5rem;
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%; /* Pour une photo ronde (retirez cette ligne si vous la préférez carrée) */
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
     }
 
     h1 {
@@ -127,6 +139,7 @@
 <body>
 
   <header>
+    <img src="AGMProfile.jpg" alt="Alexandre GM Vigouroux" class="profile-photo">
     <h1>Alexandre GM Vigouroux</h1>
     <div class="subtitle">Financial Economics & Quantitative Asset Pricing</div>
     <div class="nav-links">
@@ -140,9 +153,8 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I am an academic researcher specializing in financial economics and quantitative asset pricing. 
-      My research focuses on understanding risk dynamics, stochastic discount factor models, 
-      production-based asset pricing, and empirical market microstructure.
+      I am a PhD student specializing in financial economics and quantitative asset valuation.
+      My research focuses on understanding risk dynamics, stochastic discount factor models, production-based asset valuation, and the empirical microstructure of markets.
     </p>
   </section>
 
