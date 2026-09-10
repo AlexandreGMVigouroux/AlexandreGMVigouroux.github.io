@@ -12,6 +12,7 @@
       --link-hover: #044289;
       --border-color: #e1e4e8;
       --muted-color: #57606a;
+      --bg-light: #f6f8fa;
     }
 
     * {
@@ -27,18 +28,17 @@
       padding: 0 20px;
     }
 
-    /* En-tête flexible et adaptatif */
+    /* En-tête */
     header {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
       margin-bottom: 2.5rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 1.5rem;
     }
 
-    /* Style et taille stricte de la photo */
     .profile-photo {
       width: 140px;
       min-width: 140px;
@@ -46,27 +46,30 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--border-color);
-      background-color: #f6f8fa;
+      background-color: var(--bg-light);
     }
 
-    .header-text {
-      flex: 1;
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     h1 {
       font-size: 2.1rem;
       color: var(--heading-color);
-      margin: 0 0 0.2rem 0;
+      margin: 0;
       line-height: 1.2;
     }
 
     .subtitle {
       font-size: 1.1rem;
       color: var(--muted-color);
-      margin-bottom: 0.8rem;
+      margin: 0;
     }
 
     .nav-links {
+      margin-top: 4px;
       font-size: 0.95rem;
     }
 
@@ -74,7 +77,7 @@
       margin-right: 12px;
     }
 
-    /* Adaptation sur écran de smartphone */
+    /* Adaptation pour les écrans mobiles */
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -162,33 +165,32 @@
 <body>
 
   <header>
-    <!-- Vérifiez que le nom du fichier image correspond exactement (ex: photo.jpg, photo.png) -->
-    <img src="./AGMProfile.jpg" alt="Alexandre GM Vigouroux" class="profile-photo">
-    <div class="header-text">
+    <img src="AGMProfile.jpg" alt="Alexandre GM Vigouroux" class="profile-photo">
+    <div class="header-content">
       <h1>Alexandre GM Vigouroux</h1>
-      <div class="subtitle">Financial Economics & Quantitative Asset Pricing</div>
-      <div class="nav-links">
+      <div class="subtitle">Financial Economics &amp; Quantitative Asset Pricing</div>
+      <nav class="nav-links">
         <a href="#about">About</a> &middot;
         <a href="#research">Research</a> &middot;
         <a href="#interests">Research Interests</a> &middot;
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
     </div>
   </header>
 
   <section id="about">
     <h2>About</h2>
     <p>
-      I am an academic researcher specializing in financial economics and quantitative asset pricing. 
+      I am a PhD student specializing in financial economics and quantitative asset valuation. 
       My research focuses on understanding risk dynamics, stochastic discount factor models, 
-      production-based asset pricing, and empirical market microstructure.
+      production-based asset valuation, and the empirical microstructure of markets.
     </p>
   </section>
 
   <section id="interests">
     <h2>Research Interests</h2>
     <ul>
-      <li><strong>Empirical & Theoretical Asset Pricing:</strong> Stochastic Discount Factor (SDF) modeling, cross-sectional return predictability, and macro-finance linkages.</li>
+      <li><strong>Empirical &amp; Theoretical Asset Pricing:</strong> Stochastic Discount Factor (SDF) modeling, cross-sectional return predictability, and macro-finance linkages.</li>
       <li><strong>Production-Based Asset Pricing:</strong> Firm investment dynamics, revenue horizon structures, and corporate capital constraints.</li>
       <li><strong>Quantitative Portfolio Theory:</strong> Downside risk metrics, tail risk hedging, and nonlinear factor exposures.</li>
     </ul>
@@ -206,13 +208,13 @@
       <div class="paper-links">
         <a href="#">[PDF]</a>
         <a href="#">[SSRN]</a>
-        <a href="#">[Replication Code & Data]</a>
+        <a href="#">[Replication Code &amp; Data]</a>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact & Links</h2>
+    <h2>Contact &amp; Links</h2>
     <p>
       <strong>Email:</strong> <a href="mailto:contact@domain.com">contact@domain.com</a><br>
       <strong>GitHub:</strong> <a href="https://github.com/AlexandreGMVigouroux" target="_blank" rel="noopener">github.com/AlexandreGMVigouroux</a><br>
