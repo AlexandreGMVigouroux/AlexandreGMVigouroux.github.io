@@ -12,7 +12,10 @@
       --link-hover: #044289;
       --border-color: #e1e4e8;
       --muted-color: #57606a;
-      --bg-light: #f6f8fa;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -20,12 +23,14 @@
       line-height: 1.65;
       color: var(--text-color);
       max-width: 820px;
-      margin: 48px auto;
-      padding: 0 24px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
+    /* En-tête flexible et adaptatif */
     header {
       display: flex;
+      flex-direction: row;
       align-items: center;
       gap: 24px;
       margin-bottom: 2.5rem;
@@ -33,24 +38,30 @@
       padding-bottom: 1.5rem;
     }
 
+    /* Style et taille stricte de la photo */
     .profile-photo {
       width: 140px;
+      min-width: 140px;
       height: 140px;
+      border-radius: 50%;
       object-fit: cover;
-      border-radius: 50%; /* Pour une photo ronde (retirez cette ligne si vous la préférez carrée) */
-      border: 1px solid var(--border-color);
-      flex-shrink: 0;
+      border: 2px solid var(--border-color);
+      background-color: #f6f8fa;
+    }
+
+    .header-text {
+      flex: 1;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       color: var(--heading-color);
-      margin: 0 0 0.3rem 0;
-      font-weight: 700;
+      margin: 0 0 0.2rem 0;
+      line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--muted-color);
       margin-bottom: 0.8rem;
     }
@@ -60,11 +71,23 @@
     }
 
     .nav-links a {
-      margin-right: 15px;
+      margin-right: 12px;
+    }
+
+    /* Adaptation sur écran de smartphone */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links a {
+        display: inline-block;
+        margin: 4px 8px;
+      }
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       color: var(--heading-color);
       margin-top: 2rem;
       margin-bottom: 0.8rem;
@@ -139,22 +162,26 @@
 <body>
 
   <header>
-    <img src="/AGMProfile.jpg" alt="Alexandre GM Vigouroux" class="profile-photo">
-    <h1>Alexandre GM Vigouroux</h1>
-    <div class="subtitle">Financial Economics & Quantitative Asset Pricing</div>
-    <div class="nav-links">
-      <a href="#about">About</a> &middot;
-      <a href="#research">Research</a> &middot;
-      <a href="#interests">Research Interests</a> &middot;
-      <a href="#contact">Contact</a>
+    <!-- Vérifiez que le nom du fichier image correspond exactement (ex: photo.jpg, photo.png) -->
+    <img src="AGMProfile.jpg" alt="Alexandre GM Vigouroux" class="profile-photo">
+    <div class="header-text">
+      <h1>Alexandre GM Vigouroux</h1>
+      <div class="subtitle">Financial Economics & Quantitative Asset Pricing</div>
+      <div class="nav-links">
+        <a href="#about">About</a> &middot;
+        <a href="#research">Research</a> &middot;
+        <a href="#interests">Research Interests</a> &middot;
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
   <section id="about">
     <h2>About</h2>
     <p>
-      I am a PhD student specializing in financial economics and quantitative asset valuation.
-      My research focuses on understanding risk dynamics, stochastic discount factor models, production-based asset valuation, and the empirical microstructure of markets.
+      I am an academic researcher specializing in financial economics and quantitative asset pricing. 
+      My research focuses on understanding risk dynamics, stochastic discount factor models, 
+      production-based asset pricing, and empirical market microstructure.
     </p>
   </section>
 
@@ -180,17 +207,6 @@
         <a href="#">[PDF]</a>
         <a href="#">[SSRN]</a>
         <a href="#">[Replication Code & Data]</a>
-      </div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Second Working Paper Title</div>
-      <div class="paper-meta">In Preparation, 2026</div>
-      <p class="paper-abstract">
-        An empirical examination of downside risk measures and asymmetric utility formulations in portfolio choice models under macroeconomic uncertainty.
-      </p>
-      <div class="paper-links">
-        <a href="#">[Draft available upon request]</a>
       </div>
     </div>
   </section>
